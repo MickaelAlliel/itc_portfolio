@@ -22,19 +22,19 @@ function getColor() {
 function draw(canvas, penTool, size, locX, locY) {
 	var drawedDiv = $('<div/>').attr('class', 'drawedDiv');
 
-	drawedDiv.css('background-color', getColor())
-				.css('top', locY)
-				.css('left', locX)
-				.css('width', size)
-				.css('height', size);
+	drawedDiv.css('top', locY)
+			.css('left', locX)
+			.css('width', size)
+			.css('height', size);
 
 	if (penTool == 'roundPen') {
+		drawedDiv.css('background-color', getColor());
 		drawedDiv.addClass('round');
 	}
 	else if (penTool == 'squarePen') {
-		// Nothing to do
+		drawedDiv.css('background-color', getColor());
 	} else if (penTool == 'eraser') {
-		drawedDiv.css('background-color', 'initial');
+		drawedDiv.css('background-color', 'white');
 	}
 
 	canvas.append(drawedDiv);
@@ -108,7 +108,7 @@ function generateHtmlStructure() {
 
 	var roundPenTool = $('<input/>').attr('type', 'radio').attr('name', 'pens').attr('id', 'roundPen').attr('checked', true);
 	var roundPenLabel = $('<label/>').append(roundPenIcon).append(roundPenTool);
-	var squarePenTool = $('<input/>').attr('type', 'radio').attr('name', 'pens').attr('id', 'squarePen').attr('checked', true);
+	var squarePenTool = $('<input/>').attr('type', 'radio').attr('name', 'pens').attr('id', 'squarePen');
 	var squarePenLabel = $('<label/>').append(squarePenIcon).append(squarePenTool);
 	var eraserTool = $('<input/>').attr('type', 'radio').attr('name', 'pens').attr('id', 'eraser');
 	var eraserLabel = $('<label/>').append(eraserIcon).append(eraserTool);
