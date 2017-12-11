@@ -165,8 +165,8 @@ $(function() {
 	var canDraw = false;
 
 	// Set Event Listeners
-	$('#updateCanvasSize').click(function() { updateCanvasSize(canvas, tileSize) });
-	$('#resetCanvas').click(function() { resetCanvas(canvas, tileSize) });
+	$('#updateCanvasSize').click(function() { updateCanvasSize(canvas) });
+	$('#resetCanvas').click(function() { resetCanvas(canvas) });
 	$('[name="pens"]').change(function() { penTool = checkPenTool() });
 	$('#toolSize').change(function() {
  		toolSize = $('#toolSize').val();
