@@ -131,11 +131,21 @@ function generateHtmlStructure() {
 				.append(toolSizeInput)
 				.append(toolSizeValueLabel);
 
+	// Toolbar SaveLoad
+	var toolbarSaveLoad = $('<div/>').attr('id', 'toolbarSaveLoad');
+	var saveBtn = $('<button/>').attr('id', 'saveBtn').append('Save');
+	var loadBtn = $('<button/>').attr('id', 'loadBtn').append('Load');
+
+	toolbarSaveLoad.append(saveBtn)
+						.append('<br/>')
+						.append(loadBtn);
+
 	// ----------- TOOLBAR
 	toolbar.append(toolbarSize)
 			.append(toolbarBtns)
 			.append(toolbarColors)
-			.append(toolbarPens);
+			.append(toolbarPens)
+			.append(toolbarSaveLoad);
 
 
 	// Canvas
@@ -151,6 +161,26 @@ function generateHtmlStructure() {
 	globalContainer.append(canvasContainer);
 
 	body.append(globalContainer);
+}
+
+function save(canvas) {
+	if (typeof(Storage) !== "undefined") {
+		var saveObj = canvas.html();
+
+    	localStorage.setItem('lastCanvas', saveObj);
+	} else {
+		alert('Sorry! No Web Storage support..');
+	}
+}
+
+function load(canvas) {
+	if (typeof(Storage) !== "undefined") {
+    	var loadObj = localStorage.getItem('lastCanvas');
+
+    	canvas.html(loadObj);
+	} else {
+		alert('Sorry! No Web Storage support..');
+	}
 }
 
 $(function() {
@@ -172,6 +202,9 @@ $(function() {
  		toolSize = $('#toolSize').val();
 		$('#toolSizeValue').html(' ' + toolSize); 
 	});
+
+	$('#saveBtn').click(function() { save(canvas) });
+	$('#loadBtn').click(function() { load(canvas) });
 
 	$(document).mousemove(function(e) {
 		if ((e.pageX >= canvas[0].offsetLeft && e.pageX <= canvas[0].offsetLeft + canvas[0].offsetWidth - toolSize)

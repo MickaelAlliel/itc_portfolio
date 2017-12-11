@@ -79,6 +79,25 @@ body {
 	text-align: center;
 }
 
+#toolbarSaveLoad > button {
+	width: 150px;
+	height: 40px;
+	margin: 5px;
+
+	font-size: 1.3em;
+	font-family: 'Montserrat', sans-serif;
+
+	background-color: whitesmoke;
+}
+
+#toolbarSaveLoad > button:active {
+	border-color: black;
+}
+
+#toolbarSaveLoad > button:hover {
+	background-color: rgb(231, 178, 170);
+}
+
 .toolbar-section {
 	margin: 10px;
 }
