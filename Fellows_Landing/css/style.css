@@ -1,0 +1,121 @@
+body {
+	font-family: Lato, sans-serif;
+}
+
+.container-fluid {
+	padding: 0;
+}
+
+.dark-bg {
+	background-color: #292A2C;
+}
+
+.light-bg {
+	background-color: #E1E1E1;
+}
+
+.blue-bg {
+	background-color: #008BD0;
+}
+
+.icon-color {
+	color: #52B7DF;
+}
+
+.black-text {
+	color: black;
+}
+
+.white-text {
+	color: white;
+}
+
+.silver-text {
+	color: silver;
+}
+
+.grey-text {
+	color: grey;
+}
+
+.blue-text {
+	color: #008BD0;
+}
+
+.pattern-bg {
+	background-image: url('./../media/pattern.png');
+	background-repeat: repeat;
+}
+
+.navbar a {
+	text-decoration: none;
+	margin: 0 15px 0 15px;
+
+	color: #797979;
+	font-weight: 900;
+}
+
+.navbar a:hover {
+	color: #FBFBFB;
+}
+
+.nav-links {
+	margin-right: 10%;
+}
+
+.container-fluid > .row {
+	padding: 50px 0 50px 0;
+	justify-content: center;
+}
+
+.white-line {
+	width: 25px;
+	height: 2px;
+	background-color: white;
+	margin: 25px 0 25px 0;
+}
+
+.program-paragraphs p {
+	margin: 15px 0 15px 0;
+}
+
+.spacer-50 {
+	height: 50px;
+}
+
+.underline {
+	text-decoration: underline;
+}
+
+.program-highlights-lists ul {
+	text-align: initial!important;
+	padding-left: 15px;
+}
+
+.title {
+	margin: 25px 0 50px 0;
+}
+
+.grey-hr {
+	border-top-color: #404040;
+}
+
+.carousel-control-prev {
+	justify-content: flex-start;
+}
+
+.carousel-control-prev-icon, .carousel-control-next-icon {
+	padding: 20px;
+	background-color: #008BD0;
+}
+
+.carousel-control-next {
+	justify-content: flex-end;
+}
+
+@media screen and (max-width: 768px) {
+	.nav-item {
+		text-align: right;
+		margin: 10px 0 10px 0;
+	}
+}

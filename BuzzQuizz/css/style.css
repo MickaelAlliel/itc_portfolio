@@ -1,0 +1,59 @@
+body {
+	font-family: Montserrat, sans-serif;
+	min-height: 100vh;
+	background-image: 
+    repeating-linear-gradient(305deg, 
+      rgba(231,131,177, 0) 0,
+      #40ccde 75vmax,
+      #40ccde calc(75vmax - 5px),
+      #40ccde 75vmax
+    ),
+    repeating-linear-gradient(220deg, 
+      rgba(231,131,177, 0) 0,
+      #9959cf 75vmax,
+      #9959cf calc(75vmax - 5px),
+      #9959cf 75vmax
+    );
+
+  background-color: #e783b1;
+  background-size: 100% 100%;
+}
+
+#input-container {
+	background-color: white;
+	border: 2px solid white;
+	border-radius: 50px;
+	padding: 25px;
+}
+
+.container {
+	margin-top: 50px;
+	margin-bottom: 50px;
+}
+
+.row {
+	margin-top: 50px;
+	margin-bottom: 50px;
+}
+
+#main-form > div {
+	margin-top: 25px;
+	margin-bottom: 25px;
+}
+
+.title {
+	font-family: 'Rock Salt', cursive;
+}
+
+#submit {
+	font-weight: 900;
+}
+
+.question {
+	font-size: 1.2em;
+	font-weight: 900;
+}
+
+#legend, #score {
+	margin-top: 50px;
+}

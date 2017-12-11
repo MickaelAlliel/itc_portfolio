@@ -1,0 +1,202 @@
+body {
+	font-family: Montserrat, sans-serif;
+}
+
+.row {
+	padding: 50px 50px 50px 50px;
+}
+
+.navbar {
+	margin: 0;
+}
+
+.light-bg {
+	background-color: whitesmoke;
+}
+
+.rose-bg {
+	background-color: #FFECE5;
+}
+
+
+.text-orange {
+	color: orange;
+}
+
+strong {
+	color: orange;
+}
+
+.handmation{
+	left: 0;
+	position: absolute;
+	animation: handanimation 5s;
+}
+
+.create-wish-list-btn {
+	background-color: orange;
+	border-color: orange;
+	color: white;
+	font-weight: 900;
+	margin-left: 140px;
+	margin-bottom: 10px;
+}
+
+.create-wish-list-btn:hover {
+	background-color: whitesmoke;
+	border-color: orange;
+	color: orange;
+}
+
+.btn-country {
+	background-color: whitesmoke;
+	border-color: orange;
+	color: orange;
+	font-weight: 900;
+}
+
+.btn-country:hover {
+	background-color: orange;
+	border-color: orange;
+	color: white;
+}
+
+.title-intro {
+	font-size: 4em;
+}
+
+.subtitle-intro {
+	font-size: 2.5em;
+}
+
+@keyframes handanimation {
+	from { left: -400px; }
+	to { left : 0; }
+}
+
+.carousel-inner img {
+	max-height: 100px;
+}
+
+.carousel-inner .item{
+	text-align: center;
+	margin-left: 12.5%;
+	width: 75%;
+}
+
+
+#carousel-occasions {
+	height: 300px;
+	padding-top: 50px;
+}
+
+.carousel-control {
+	background-image: none!important;
+}
+
+.carousel-indicators {
+	bottom: -80px;
+}
+
+.carousel-indicators li {
+	border-color: orange!important;
+}
+
+.carousel-indicators li.active {
+	background-color: orange!important;
+}
+
+.benefits-list {
+	list-style-image: url('../media/svg/checkmark-circle.svg');
+}
+
+.crystal-ball-no-list-style {
+	list-style: none;
+}
+
+.footer-left li {
+	display:inline-block;
+	list-style:none;
+	margin-right:15px;
+}
+
+.footer-left li a {
+	color: black;
+}
+
+.footer-right li {
+	display:inline-block;
+	list-style:none;
+}
+
+.footer-right li a {
+	color: black;
+	text-decoration: underline;
+	margin: 0 5px 0 5px;
+}
+
+.footer-right ul {
+	padding-left: 0;
+}
+
+.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus, .navbar-default .navbar-nav>.active>a:hover {
+	background-color: #FFECE5;
+	font-weight: 900;
+}
+
+.nav li {
+	font-weight: 900;
+}
+
+.img-review {
+	margin: auto;
+	padding-bottom: 25px;
+	border-radius: 100%
+}
+
+.review div {
+	text-align: center;
+}
+
+.mobile-intro-button {
+	display: none;
+}
+
+
+@media screen and (min-width: 768px) {
+	.review p {
+		margin-left: 100px;
+		margin-right: 100px;
+	}
+
+
+	.arrow {
+		padding-top: 100px;
+	}
+}
+
+@media screen and (max-width: 500px) {
+	.title-intro {
+		font-size: 2em;
+	}
+}
+
+@media screen and (max-width: 768px) {
+	.handmation {
+		display: none;
+	}
+
+	.mobile-intro-button {
+		display: block;
+		text-align: center;
+	}
+
+	.create-wish-list-btn {
+		margin: 0;
+	}
+
+	.footer, .globe {
+		text-align: center;
+	}
+}
+
