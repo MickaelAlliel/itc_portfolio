@@ -217,6 +217,12 @@ $(function() {
 
 	$(document).mousedown(function(e) {
 		canDraw = true;
+		if ((e.pageX >= canvas[0].offsetLeft && e.pageX <= canvas[0].offsetLeft + canvas[0].offsetWidth - toolSize)
+			 && (e.pageY >= canvas[0].offsetTop && e.pageY <= canvas[0].offsetTop + canvas[0].offsetHeight - toolSize)) {
+			if (canDraw) {
+				draw(canvas, penTool, toolSize, e.pageX, e.pageY);
+			}
+		}
 	});
 
 	$(document).mouseup(function(e) {
