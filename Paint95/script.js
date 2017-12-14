@@ -22,8 +22,8 @@ function getColor() {
 function draw(canvas, penTool, size, locX, locY) {
 	var drawedDiv = $('<div/>').attr('class', 'drawedDiv');
 
-	drawedDiv.css('top', locY)
-			.css('left', locX)
+	drawedDiv.css('top', locY - (size / 2))
+			.css('left', locX - (size / 2))
 			.css('width', size)
 			.css('height', size);
 
@@ -230,5 +230,5 @@ $(function() {
 	});
 
 	// Initialize Canvas
-	updateCanvasSize(canvas, toolSize);
+	updateCanvasSize(canvas);
 });
