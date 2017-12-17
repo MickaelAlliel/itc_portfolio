@@ -102,9 +102,9 @@ function generateHtmlStructure() {
 	// Toolbar Pens
 	var toolbarPens = $('<div/>').attr('id', 'toolbarPens').attr('class', 'toolbar-section');
 
-	var roundPenIcon = $('<img/>').attr('src', 'round-pen.png').attr('class', 'toolIcon');
-	var squarePenIcon = $('<img/>').attr('src', 'square-pen.png').attr('class', 'toolIcon');
-	var eraserIcon = $('<img/>').attr('src', 'eraser.png').attr('class', 'toolIcon');
+	var roundPenIcon = $('<img/>').attr('src', 'assets/round-pen.png').attr('class', 'toolIcon');
+	var squarePenIcon = $('<img/>').attr('src', 'assets/square-pen.png').attr('class', 'toolIcon');
+	var eraserIcon = $('<img/>').attr('src', 'assets/eraser.png').attr('class', 'toolIcon');
 
 	var roundPenTool = $('<input/>').attr('type', 'radio').attr('name', 'pens').attr('id', 'roundPen').attr('checked', true);
 	var roundPenLabel = $('<label/>').append(roundPenIcon).append(roundPenTool);

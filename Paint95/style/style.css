@@ -1,5 +1,5 @@
 body {
-  background-image: url('background.jpg');
+  background-image: url('../assets/background.jpg');
   font-family: 'Montserrat', sans-serif;
 
   margin: 0;
