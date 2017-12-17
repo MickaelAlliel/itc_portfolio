@@ -208,11 +208,11 @@ $(function() {
 
 	$(document).mousemove(function(e) {
 		if ((e.pageX >= canvas[0].offsetLeft && e.pageX <= canvas[0].offsetLeft + canvas[0].offsetWidth - toolSize / 2)
-			 && (e.pageY >= canvas[0].offsetTop && e.pageY <= canvas[0].offsetTop + canvas[0].offsetHeight - toolSize / 2) {
-			if (canDraw) {
-				draw(canvas, penTool, toolSize, e.pageX, e.pageY);
+			 && (e.pageY >= canvas[0].offsetTop && e.pageY <= canvas[0].offsetTop + canvas[0].offsetHeight - toolSize / 2)) {
+				if (canDraw) {
+					draw(canvas, penTool, toolSize, e.pageX, e.pageY);
+				}
 			}
-		}
 	});
 
 	$(document).mousedown(function(e) {
