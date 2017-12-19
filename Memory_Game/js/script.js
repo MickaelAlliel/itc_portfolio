@@ -84,11 +84,12 @@ var CARD_HEIGHT = 250;
 
 // Card Object
 function Card(name, position) {
-	this.name: 'animal-' + name,
-	this.position: position,
-	this.id: 'card' + this.position.x + this.position.y,
-	this.matched: false,
-	this.element: $('<div/>').attr('id', this.id).attr('name', this.name).addClass('card').addClass('card-back');,
+	this.name = 'animal-' + name;
+	this.position = position;
+	this.id = 'card' + this.position.x + this.position.y;
+	this.matched = false;
+	this.element = $('<div/>').attr('id', this.id).attr('name', this.name).addClass('card').addClass('card-back');
+
 	this.flip = function() {
 		if (this.element.attr('class').contains('card-front')) {
 			this.element.removeClass('card-front');
@@ -97,13 +98,15 @@ function Card(name, position) {
 			this.element.removeClass('card-back');
 			this.element.addClass('card-front');
 		}
-	},
+	};
+
 	this.setMatched = function() {
 		this.matched = true;
-	},
+	};
+
 	this.unsetMatched = function() {
 		this.matched = false;
-	},
+	};
 };
 // --Card Object
 
