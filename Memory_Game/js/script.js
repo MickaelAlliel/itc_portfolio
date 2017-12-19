@@ -73,6 +73,8 @@ card_back = base_image_path + 'card_back' + base_image_ext;
 var SCORE = 0;
 var SCORE_INCREMENT = 100;
 
+var FAILED_TRIES = 0;
+
 var TIME = 0;
 
 var CARD_WIDTH = 200;
@@ -81,9 +83,27 @@ var CARD_HEIGHT = 250;
 // --Global Vars
 
 // Card Object
-function Card(id, position) {
-	id: 'animal-' + id,
-	position: position,
+function Card(name, position) {
+	this.name: 'animal-' + name,
+	this.position: position,
+	this.id: 'card' + this.position.x + this.position.y,
+	this.matched: false,
+	this.element: $('<div/>').attr('id', this.id).attr('name', this.name).addClass('card').addClass('card-back');,
+	this.flip = function() {
+		if (this.element.attr('class').contains('card-front')) {
+			this.element.removeClass('card-front');
+			this.element.addClass('card-back');
+		} else {
+			this.element.removeClass('card-back');
+			this.element.addClass('card-front');
+		}
+	},
+	this.setMatched = function() {
+		this.matched = true;
+	},
+	this.unsetMatched = function() {
+		this.matched = false;
+	},
 };
 // --Card Object
 
