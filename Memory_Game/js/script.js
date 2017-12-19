@@ -77,26 +77,28 @@ var FAILED_TRIES = 0;
 
 var TIME = 0;
 
-var CARD_WIDTH = 200;
-var CARD_HEIGHT = 250;
-
 // --Global Vars
 
 // Card Object
-function Card(name, position) {
+function Card(name, position, imageSrc) {
 	this.name = 'animal-' + name;
 	this.position = position;
-	this.id = 'card' + this.position.x + this.position.y;
+	this.parentId = 'cell-' + position.x + position.y;
+	this.id = 'card-' + this.position.x + this.position.y;
 	this.matched = false;
-	this.element = $('<div/>').attr('id', this.id).attr('name', this.name).addClass('card').addClass('card-back');
+	this.element = $('<div/>')
+					.attr('id', this.id)
+					.attr('name', this.name)
+					.addClass('card')
+					.append($('<img/>').attr('src', imageSrc).attr('id', 'img-' + this.id).addClass('card-back'));
 
 	this.flip = function() {
-		if (this.element.attr('class').contains('card-front')) {
-			this.element.removeClass('card-front');
-			this.element.addClass('card-back');
+		if (this.element.children().hasClass('card-front')) {
+			this.element.children().removeClass('card-front');
+			this.element.children().addClass('card-back');
 		} else {
-			this.element.removeClass('card-back');
-			this.element.addClass('card-front');
+			this.element.children().removeClass('card-back');
+			this.element.children().addClass('card-front');
 		}
 	};
 
@@ -107,12 +109,37 @@ function Card(name, position) {
 	this.unsetMatched = function() {
 		this.matched = false;
 	};
+
+	this.addToView = function() {
+		if ($('#board').find(this.id).length == 0) {
+			$('#board').append(this.element);
+		}
+	};
 };
 // --Card Object
 
 // HTML Generation
+function generateRows() {
+	let board = $('#board');
+
+	for (var i = 0; i < 4; i++) {
+		let row = $('<div/>').addClass('board-row').addClass('row-' + i);
+		board.append(row);
+	}
+}
+
+function generateCards() {
+
+}
+
+function generateHtml() {
+	generateRows();
+}
 // --HTML Generation
 
 $().ready(function() {
-
+	generateHtml();
+	var card = new Card('test', {x: 0, y: 0}, card_images[0]);
+	card.addToView();
+	card.flip();
 });

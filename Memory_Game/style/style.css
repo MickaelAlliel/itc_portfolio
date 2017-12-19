@@ -100,7 +100,49 @@ body {
 
 /* Cards */
 
+.card {
+	background-image: url('../assets/cards/card_back.jpg');
+	overflow: hidden;
 
+	border-radius: 15px;
+
+	border: 1px solid white;
+	box-shadow: 0 0 10px white;
+
+	animation-name: cardDeselection;
+	animation-duration: 0.5s;
+}
+
+.card:hover {
+	box-shadow: 0 0 10px black;
+	border-color: black;
+
+	animation-name: cardSelection;
+	animation-duration: 0.5s;
+}
+
+@keyframes cardSelection {
+	from { box-shadow: 0 0 10px white; border-color: white; }
+	to { box-shadow: 0 0 10px black; border-color: black; }
+}
+
+@keyframes cardDeselection {
+	from { box-shadow: 0 0 10px black; border-color: black; }
+	to { box-shadow: 0 0 10px white; border-color: white; }
+}
+
+.card, .card img {
+	width: 200;
+	height: 250;
+}
+
+img.card-back {
+	visibility: hidden;
+}
+
+img.card-front {
+	visibility: visible;
+}
 
 
 /* Media Queries */
@@ -114,4 +156,9 @@ body {
 	#board {
 		margin-top: 20px;
 	}
+
+	.card, .card img {
+	width: 100;
+	height: 150;
+}
 }
