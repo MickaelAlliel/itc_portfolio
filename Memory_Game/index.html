@@ -41,12 +41,13 @@
 			</div>
 			<div id="board">
 			</div>
-			<div class="modal fade" id="winOverlay" tabindex="-1" role="dialog">
+		</div>
+		<div class="modal fade" id="winOverlay" tabindex="-1" role="dialog">
 			  <div class="modal-dialog" role="document">
 			    <div class="modal-content">
 			      <div class="modal-header">
 			        <h5 class="modal-title">Congratulations !</h5>
-			        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+			        <button type="button" class="close" onclick='closeModal()' aria-label="Close">
 			          <span aria-hidden="true">&times;</span>
 			        </button>
 			      </div>
@@ -64,11 +65,10 @@
 			      </div>
 			      <div class="modal-footer">
 			        <button type="button" id="overlayNewGame" class="btn btn-success">New Game</button>
-			        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+			        <button type="button" class="btn btn-secondary" onclick='closeModal()'>Close</button>
 			      </div>
 			    </div>
 			  </div>
 			</div>
-		</div>
 	</body>
 </html>

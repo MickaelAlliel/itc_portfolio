@@ -100,7 +100,6 @@ function timer(action) {
 		TIMER_INTERVAL = setInterval(function() {
 			TIME = incrementTime(TIME);
 			TIMER_ELEMENT.html(parseTime(TIME));
-			//console.log(TIMER_ELEMENT);
 		}, 1000);
 	} else {
 		console.error('Invalid Timer Action. Valid actions are : start, stop, reset');
@@ -139,6 +138,7 @@ card_back = base_image_path + 'card_back' + base_image_ext;
 // Global Vars
 var GAMELOOP_INTERVAL = null;
 var CAN_CLICK = true;
+var WIN_OVERLAY_ON = false;
 
 var FAILED_TRIES = 0;
 
@@ -215,6 +215,10 @@ function generateGame() {
 
 function degenerateGame() {
 	$('#board').html('');
+	CARDS_IN_GAME = [];
+	TIME = 0;
+	FAILED_TRIES = 0;
+	CAN_CLICK = true;
 }
 // --HTML Generation
 
@@ -232,8 +236,13 @@ function generateEvents() {
 	});
 
 	$('#overlayNewGame').click(function(e) {
-		restart();
+		$('#winOverlay').modal('toggle');
+		GameState = StateManager.RestartGame;
 	});
+}
+
+function closeModal() {
+	$('#winOverlay').modal('toggle');
 }
 
 function generateGameEvents() {
@@ -307,7 +316,7 @@ function restart() {
 	degenerateGame();
 	generateGame();
 	timer('reset');
-	FAILED_TRIES = 0;
+	WIN_OVERLAY_ON = false;
 
 	GameState = StateManager.Playing;
 }
@@ -335,7 +344,10 @@ function game() {
 			$('#overlayFailedTriesText').html(FAILED_TRIES);
 
 			// Pop up Win overlay
-			$('#winOverlay').modal('show');
+			if (!WIN_OVERLAY_ON) {
+				$('#winOverlay').modal('toggle');
+				WIN_OVERLAY_ON = true;
+			}
 		} else if (GameState == StateManager.Lose) {
 			timer('stop');
 			//console.log('inside lose');
@@ -345,6 +357,10 @@ function game() {
 
 $().ready(function() {
 	generateEvents();
+
+	$('#test').click(function() {
+		GameState = StateManager.Win;
+	});
 
 	GAMELOOP_INTERVAL = setInterval(function() {
 		game();
