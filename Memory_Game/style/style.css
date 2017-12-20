@@ -104,6 +104,8 @@ body {
 	background-image: url('../assets/cards/card_back.jpg');
 	overflow: hidden;
 
+	margin: 5px;
+
 	border-radius: 15px;
 
 	border: 1px solid white;
@@ -119,6 +121,14 @@ body {
 
 	animation-name: cardSelection;
 	animation-duration: 0.5s;
+}
+
+.card.card-success {
+	box-shadow: 0 0 50px #5cb85c;
+}
+
+.card.card-fail {
+	box-shadow: 0 0 50px #d9534f;
 }
 
 @keyframes cardSelection {
@@ -137,13 +147,20 @@ body {
 }
 
 img.card-back {
-	visibility: hidden;
+	opacity: 0;
 }
 
 img.card-front {
-	visibility: visible;
+	opacity: 1;
+
+	animation-name: cardFrontAnim;
+	animation-duration: 0.5s;
 }
 
+@keyframes cardFrontAnim {
+	from { opacity: 0; }
+	to { opacity: 1; }
+}
 
 /* Media Queries */
 
